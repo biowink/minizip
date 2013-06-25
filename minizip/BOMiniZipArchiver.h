@@ -2,8 +2,8 @@
 //  BOMiniZipArchiver.h
 //  minizip
 //
-//  Created by Daniel Eggert on 11/22/12.
-//  Copyright (c) 2012 Daniel Eggert. All rights reserved.
+//  Created by BioWink GmbH on 11/22/12.
+//  Copyright (c) 2012 BioWink GmbH. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
