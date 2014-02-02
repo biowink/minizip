@@ -35,7 +35,7 @@ static void filetimeAndSize(NSURL *fileURL,
     NSError *error = nil;
     NSDate *modificationTime = nil;
     if ([fileURL getResourceValue:&modificationTime forKey:NSURLContentModificationDateKey error:&error]) {
-        time_t const tm_t = [modificationTime timeIntervalSince1970];
+        time_t const tm_t = (time_t)[modificationTime timeIntervalSince1970];
         struct tm * filedate = localtime(&tm_t);
         tmzip.tm_sec  = filedate->tm_sec;
         tmzip.tm_min  = filedate->tm_min;
@@ -48,7 +48,7 @@ static void filetimeAndSize(NSURL *fileURL,
     }
     NSNumber *wrappedSize = nil;
     if ([fileURL getResourceValue:&wrappedSize forKey:NSURLFileSizeKey error:&error]) {
-        filesize = [wrappedSize longLongValue];
+        filesize = (size_t)[wrappedSize longLongValue];
     } else {
         filesize = 0LL;
     }
